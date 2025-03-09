@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Bienvenido, {{ username }}</h2>
+
+    {% if es_admin %}
+        <h3>Lista de perros en la guardería</h3>
+        <ul>
+            <li>Max - Labrador</li>
+            <li>Luna - Golden Retriever</li>
+            <li>Rocky - Bulldog</li>
+            <li>Toby - Pastor Alemán</li>
+        </ul>
+    {% else %}
+        <p>No tienes permisos para ver esta información.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</body>
+</html>
